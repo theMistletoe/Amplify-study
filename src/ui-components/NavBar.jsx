@@ -26,39 +26,19 @@ export default function NavBar(props) {
     {
       overrides: {
         "Star 1": {},
-        Logo29767075: {},
-        Logo29767073: {},
+        Logo35793118: {},
+        Logo35793116: {},
         Dashboard: {},
         Jobs: {},
         Applicants: {},
         Company: {},
         Create: {},
-        "Frame 32129767076": {},
-        SearchField: {},
-        Vector: {},
-        Icon: {},
-        image: {},
-        "Frame 32129767081": {},
-        NavBar: {},
-      },
-      variantValues: { breakpoint: "base" },
-    },
-    {
-      overrides: {
-        "Star 1": {},
-        Logo29767075: {},
-        Logo29767073: {},
-        Dashboard: {},
-        Jobs: {},
-        Applicants: {},
-        Company: {},
-        Create: {},
-        "Frame 32129767076": { display: "none" },
+        "Frame 32135793119": { display: "none" },
         SearchField: { display: "none" },
         Vector: {},
         Icon: {},
         image: {},
-        "Frame 32129767081": {
+        "Frame 32135793125": {
           width: "1287px",
           justifyContent: "flex-start",
           shrink: "0",
@@ -70,19 +50,43 @@ export default function NavBar(props) {
     {
       overrides: {
         "Star 1": {},
-        Logo29767075: {},
-        Logo29767073: {},
+        Logo35793118: {},
+        Logo35793116: {},
         Dashboard: {},
         Jobs: {},
         Applicants: {},
         Company: {},
         Create: {},
-        "Frame 32129767076": {},
+        "Frame 32135793119": { display: "none" },
+        SearchField: { display: "none" },
+        Vector: {},
+        Icon: {},
+        image: {},
+        "Frame 32135793125": {
+          width: "1287px",
+          justifyContent: "flex-start",
+          shrink: "0",
+        },
+        NavBar: { width: "unset", justifyContent: "flex-start" },
+      },
+      variantValues: { breakpoint: "base" },
+    },
+    {
+      overrides: {
+        "Star 1": {},
+        Logo35793118: {},
+        Logo35793116: {},
+        Dashboard: {},
+        Jobs: {},
+        Applicants: {},
+        Company: {},
+        Create: {},
+        "Frame 32135793119": {},
         SearchField: {},
         Vector: {},
         Icon: {},
         image: {},
-        "Frame 32129767081": {},
+        "Frame 32135793125": {},
         NavBar: {},
       },
       variantValues: { breakpoint: "xxl" },
@@ -90,19 +94,19 @@ export default function NavBar(props) {
     {
       overrides: {
         "Star 1": {},
-        Logo29767075: {},
-        Logo29767073: {},
+        Logo35793118: {},
+        Logo35793116: {},
         Dashboard: {},
         Jobs: {},
         Applicants: {},
         Company: {},
         Create: {},
-        "Frame 32129767076": {},
+        "Frame 32135793119": {},
         SearchField: {},
         Vector: {},
         Icon: {},
         image: {},
-        "Frame 32129767081": {},
+        "Frame 32135793125": {},
         NavBar: {},
       },
       variantValues: { breakpoint: "xl" },
@@ -110,19 +114,19 @@ export default function NavBar(props) {
     {
       overrides: {
         "Star 1": {},
-        Logo29767075: {},
-        Logo29767073: {},
+        Logo35793118: {},
+        Logo35793116: {},
         Dashboard: {},
         Jobs: {},
         Applicants: {},
         Company: {},
         Create: {},
-        "Frame 32129767076": {},
+        "Frame 32135793119": {},
         SearchField: {},
         Vector: {},
         Icon: {},
         image: {},
-        "Frame 32129767081": {},
+        "Frame 32135793125": {},
         NavBar: {},
       },
       variantValues: { breakpoint: "large" },
@@ -130,19 +134,19 @@ export default function NavBar(props) {
     {
       overrides: {
         "Star 1": {},
-        Logo29767075: {},
-        Logo29767073: {},
+        Logo35793118: {},
+        Logo35793116: {},
         Dashboard: {},
         Jobs: {},
         Applicants: {},
         Company: {},
         Create: {},
-        "Frame 32129767076": { display: "none" },
+        "Frame 32135793119": { display: "none" },
         SearchField: { display: "none" },
         Vector: {},
         Icon: {},
         image: {},
-        "Frame 32129767081": {
+        "Frame 32135793125": {
           width: "1287px",
           justifyContent: "flex-start",
           shrink: "0",
@@ -195,7 +199,7 @@ export default function NavBar(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         display="flex"
-        {...getOverrideProps(overrides, "Logo29767073")}
+        {...getOverrideProps(overrides, "Logo35793116")}
       >
         <Icon
           width="18px"
@@ -236,7 +240,7 @@ export default function NavBar(props) {
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
           children="Logo"
-          {...getOverrideProps(overrides, "Logo29767075")}
+          {...getOverrideProps(overrides, "Logo35793118")}
         ></Text>
       </Flex>
       <Flex
@@ -252,7 +256,7 @@ export default function NavBar(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         display="flex"
-        {...getOverrideProps(overrides, "Frame 32129767076")}
+        {...getOverrideProps(overrides, "Frame 32135793119")}
       >
         <Text
           fontFamily="Inter"
@@ -378,7 +382,7 @@ export default function NavBar(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         display="flex"
-        {...getOverrideProps(overrides, "Frame 32129767081")}
+        {...getOverrideProps(overrides, "Frame 32135793125")}
       >
         <SearchField
           shrink="0"

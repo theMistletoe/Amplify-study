@@ -16,7 +16,9 @@ import NoteUI from "./NoteUI";
 import { Collection } from "@aws-amplify/ui-react";
 export default function NoteUICollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsPagination = { sort: (s) => s.createdAt(SortDirection.ASCENDING) };
+  const itemsPagination = {
+    sort: (s) => s.createdAt(SortDirection.DESCENDING),
+  };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
@@ -33,14 +35,14 @@ export default function NoteUICollection(props) {
   return (
     <Collection
       type="grid"
-      isSearchable="true"
+      isSearchable={true}
       isPaginated={true}
       searchPlaceholder="Search..."
       itemsPerPage={9}
       templateColumns="1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"
-      justifyContent="stretch"
+      justifyContent="center"
       items={items || []}
       {...getOverrideProps(overrides, "NoteUICollection")}
       {...rest}

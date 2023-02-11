@@ -10,8 +10,7 @@ import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import MarketingFooter from "./MarketingFooter";
 import Features4x1 from "./Features4x1";
 import HeroLayout1 from "./HeroLayout1";
-import NavBar from "./NavBar";
-import { View } from "@aws-amplify/ui-react";
+import { Flex, View } from "@aws-amplify/ui-react";
 export default function TopPage(props) {
   const { overrides, ...rest } = props;
   return (
@@ -76,24 +75,7 @@ export default function TopPage(props) {
         mode="Light"
         {...getOverrideProps(overrides, "HeroLayout1")}
       ></HeroLayout1>
-      <NavBar
-        display="flex"
-        gap="20px"
-        direction="row"
-        width="1440px"
-        height="unset"
-        justifyContent="center"
-        alignItems="center"
-        position="absolute"
-        top="0%"
-        bottom="93.59%"
-        left="0%"
-        right="0%"
-        padding="24px 32px 24px 32px"
-        backgroundColor="rgba(255,255,255,1)"
-        breakpoint="base"
-        {...getOverrideProps(overrides, "NavBar")}
-      ></NavBar>
+      <Flex {...getOverrideProps(overrides, "NavBar")}></Flex>
     </View>
   );
 }
