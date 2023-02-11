@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { NavBar, NoteCreateForm, NoteUICollection, NoteUpdateForm } from './ui-components'
 
 function App() {
   const [showCreateModal, setShowCreateModal] = useState(false)
   const [showUpdateModal, setShowUpdateModal] = useState(false)
   const [updateNote, setUpdateNote] = useState()
+  const isDesktop: boolean = useMediaQuery({ query: '(min-width: 768px)' })
 
   return (
     <>
@@ -16,7 +18,7 @@ function App() {
         }
       }} />
       <div className='container'>
-        <NoteUICollection overrideItems={({ item }) => {
+        <NoteUICollection type={isDesktop ? "grid" : "list"} overrideItems={({ item }) => {
           return {
             overrides: {
               title: {
