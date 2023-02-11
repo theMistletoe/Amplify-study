@@ -91,6 +91,7 @@ export default function TopPage(props) {
         right="0%"
         padding="24px 32px 24px 32px"
         backgroundColor="rgba(255,255,255,1)"
+        breakpoint="base"
         {...getOverrideProps(overrides, "NavBar")}
       ></NavBar>
     </View>

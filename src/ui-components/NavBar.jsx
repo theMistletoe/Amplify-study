@@ -6,7 +6,11 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  getOverridesFromVariants,
+  mergeVariantsAndOverrides,
+} from "@aws-amplify/ui-react/internal";
 import {
   Flex,
   Icon,
@@ -14,9 +18,156 @@ import {
   SearchField,
   Text,
   View,
+  useBreakpointValue,
 } from "@aws-amplify/ui-react";
 export default function NavBar(props) {
-  const { overrides, ...rest } = props;
+  const { overrides: overridesProp, ...restProp } = props;
+  const variants = [
+    {
+      overrides: {
+        "Star 1": {},
+        Logo29767075: {},
+        Logo29767073: {},
+        Dashboard: {},
+        Jobs: {},
+        Applicants: {},
+        Company: {},
+        Create: {},
+        "Frame 32129767076": {},
+        SearchField: {},
+        Vector: {},
+        Icon: {},
+        image: {},
+        "Frame 32129767081": {},
+        NavBar: {},
+      },
+      variantValues: { breakpoint: "base" },
+    },
+    {
+      overrides: {
+        "Star 1": {},
+        Logo29767075: {},
+        Logo29767073: {},
+        Dashboard: {},
+        Jobs: {},
+        Applicants: {},
+        Company: {},
+        Create: {},
+        "Frame 32129767076": { display: "none" },
+        SearchField: { display: "none" },
+        Vector: {},
+        Icon: {},
+        image: {},
+        "Frame 32129767081": {
+          width: "1287px",
+          justifyContent: "flex-start",
+          shrink: "0",
+        },
+        NavBar: { width: "unset", justifyContent: "flex-start" },
+      },
+      variantValues: { breakpoint: "small" },
+    },
+    {
+      overrides: {
+        "Star 1": {},
+        Logo29767075: {},
+        Logo29767073: {},
+        Dashboard: {},
+        Jobs: {},
+        Applicants: {},
+        Company: {},
+        Create: {},
+        "Frame 32129767076": {},
+        SearchField: {},
+        Vector: {},
+        Icon: {},
+        image: {},
+        "Frame 32129767081": {},
+        NavBar: {},
+      },
+      variantValues: { breakpoint: "xxl" },
+    },
+    {
+      overrides: {
+        "Star 1": {},
+        Logo29767075: {},
+        Logo29767073: {},
+        Dashboard: {},
+        Jobs: {},
+        Applicants: {},
+        Company: {},
+        Create: {},
+        "Frame 32129767076": {},
+        SearchField: {},
+        Vector: {},
+        Icon: {},
+        image: {},
+        "Frame 32129767081": {},
+        NavBar: {},
+      },
+      variantValues: { breakpoint: "xl" },
+    },
+    {
+      overrides: {
+        "Star 1": {},
+        Logo29767075: {},
+        Logo29767073: {},
+        Dashboard: {},
+        Jobs: {},
+        Applicants: {},
+        Company: {},
+        Create: {},
+        "Frame 32129767076": {},
+        SearchField: {},
+        Vector: {},
+        Icon: {},
+        image: {},
+        "Frame 32129767081": {},
+        NavBar: {},
+      },
+      variantValues: { breakpoint: "large" },
+    },
+    {
+      overrides: {
+        "Star 1": {},
+        Logo29767075: {},
+        Logo29767073: {},
+        Dashboard: {},
+        Jobs: {},
+        Applicants: {},
+        Company: {},
+        Create: {},
+        "Frame 32129767076": { display: "none" },
+        SearchField: { display: "none" },
+        Vector: {},
+        Icon: {},
+        image: {},
+        "Frame 32129767081": {
+          width: "1287px",
+          justifyContent: "flex-start",
+          shrink: "0",
+        },
+        NavBar: { width: "unset", justifyContent: "flex-start" },
+      },
+      variantValues: { breakpoint: "medium" },
+    },
+  ];
+  const breakpointHook = useBreakpointValue({
+    base: "base",
+    small: "small",
+    medium: "medium",
+    large: "large",
+    xl: "xl",
+    xxl: "xxl",
+  });
+  const rest = { style: { transition: "all 0.25s" }, ...restProp };
+  const overrides = mergeVariantsAndOverrides(
+    getOverridesFromVariants(variants, {
+      breakpoint: breakpointHook,
+      ...props,
+    }),
+    overridesProp || {}
+  );
   return (
     <Flex
       gap="20px"
@@ -28,6 +179,7 @@ export default function NavBar(props) {
       position="relative"
       padding="24px 32px 24px 32px"
       backgroundColor="rgba(255,255,255,1)"
+      display="flex"
       {...getOverrideProps(overrides, "NavBar")}
       {...rest}
     >
@@ -42,6 +194,7 @@ export default function NavBar(props) {
         alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
+        display="flex"
         {...getOverrideProps(overrides, "Logo29767073")}
       >
         <Icon
@@ -98,6 +251,7 @@ export default function NavBar(props) {
         basis="0"
         position="relative"
         padding="0px 0px 0px 0px"
+        display="flex"
         {...getOverrideProps(overrides, "Frame 32129767076")}
       >
         <Text
@@ -223,6 +377,7 @@ export default function NavBar(props) {
         basis="0"
         position="relative"
         padding="0px 0px 0px 0px"
+        display="flex"
         {...getOverrideProps(overrides, "Frame 32129767081")}
       >
         <SearchField

@@ -26,6 +26,8 @@ export declare type NavBarOverridesProps = {
     image?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;
 export declare type NavBarProps = React.PropsWithChildren<Partial<FlexProps> & {
+    breakpoint?: "base" | "large" | "medium" | "small" | "xl" | "xxl";
+} & {
     overrides?: NavBarOverridesProps | undefined | null;
 }>;
 export default function NavBar(props: NavBarProps): React.ReactElement;

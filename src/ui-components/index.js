@@ -5,13 +5,14 @@
  **************************************************************************/
 
 export { default as EditProfile } from "./EditProfile";
-export { default as NavBar } from "./NavBar";
 export { default as ActionCard } from "./ActionCard";
 export { default as ItemCard } from "./ItemCard";
 export { default as TaskLane } from "./TaskLane";
 export { default as HeroLayout1 } from "./HeroLayout1";
+export { default as NavBar } from "./NavBar";
 export { default as Features2x2 } from "./Features2x2";
 export { default as HeroLayout2 } from "./HeroLayout2";
+export { default as TopPage } from "./TopPage";
 export { default as FAQItem } from "./FAQItem";
 export { default as TaskLaneConcrete } from "./TaskLaneConcrete";
 export { default as StandardCard } from "./StandardCard";
@@ -23,7 +24,6 @@ export { default as FeaturesText2x2 } from "./FeaturesText2x2";
 export { default as TaskCard } from "./TaskCard";
 export { default as Features4x1 } from "./Features4x1";
 export { default as HeroLayout4 } from "./HeroLayout4";
-export { default as TopPage } from "./TopPage";
 export { default as NoteUI } from "./NoteUI";
 export { default as Ampligram } from "./Ampligram";
 export { default as ProductDetail } from "./ProductDetail";
