@@ -21,6 +21,9 @@ function App() {
         <NoteUICollection type={isDesktop ? "grid" : "list"} overrideItems={({ item }) => {
           return {
             overrides: {
+              NoteUI: {
+                className: !isDesktop ? 'note-ui-mobile' : ''
+              },
               title: {
                 color : 'blue',
                 onClick: () => {
