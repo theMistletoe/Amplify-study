@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import { NavBar, NoteCreateForm, NoteUICollection, NoteUpdateForm } from './ui-components'
 
 function App() {
+  const [showCreateModal, setShowCreateModal] = useState(false)
+  const [showUpdateModal, setShowUpdateModal] = useState(false)
+  const [updateNote, setUpdateNote] = useState()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <NavBar width="100%" marginBottom={'20px'} overrides={{
+        Create: {
+          onClick: () => {
+            setShowCreateModal(true);
+          }
+        }
+      }} />
+      <div className='container'>
+        <NoteUICollection overrideItems={({ item }) => {
+          return {
+            overrides: {
+              title: {
+                color : 'blue',
+                onClick: () => {
+                  alert('title clicked');
+                }
+              },
+              edit: {
+                color: 'green',
+                onClick: () => {
+                  alert('edit clicked');
+                  setShowUpdateModal(true);
+                  setUpdateNote(item);
+                }
+              }
+            }
+          }
+        }} />  
+      </div>
+      {showCreateModal && (
+        <div className='modal'>
+          <NoteCreateForm />
+        </div>
+      )}
+      {showUpdateModal && (
+        <div className='modal'>
+          <NoteUpdateForm note={updateNote} />
+        </div>
+      )}
+    </>
+  )
 }
 
 export default App;
