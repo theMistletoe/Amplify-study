@@ -57,7 +57,7 @@ function App() {
             </div>
           )}
           {selectedNote && (
-            <div className='modal' style={{padding: "1rem"}}>
+            <div className='modal' style={{padding: "1rem", border:0, boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'}}>
               <NoteDetailUI note={selectedNote}/>
               <MemoUICollection style={{alignItems: 'center'}} overrideItems={({ item }) => {
                 return {
