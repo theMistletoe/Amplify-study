@@ -1,4 +1,5 @@
 import { Authenticator } from '@aws-amplify/ui-react'
+import { DataStore } from 'aws-amplify'
 import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { NavBar, NoteCreateForm, NoteUICollection, NoteUpdateForm } from './ui-components'
@@ -56,7 +57,8 @@ function App() {
             </div>
           )}
           <div>
-            <button onClick={() => {
+            <button onClick={async () => {
+              await DataStore.clear()
               signOut && signOut();
             }}>SignOut</button>
           </div>
