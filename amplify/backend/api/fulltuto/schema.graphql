@@ -1,6 +1,13 @@
+type Memo @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  content: String
+  noteID: ID! @index(name: "byNote")
+}
+
 type Note @model @auth(rules: [{allow: owner}]) {
   id: ID!
   title: String
   text: String
+  Memos: [Memo] @hasMany(indexName: "byNote", fields: ["id"])
 }
  

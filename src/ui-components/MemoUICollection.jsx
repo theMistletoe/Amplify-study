@@ -6,15 +6,15 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Note } from "../models";
+import { Memo } from "../models";
 import { SortDirection } from "@aws-amplify/datastore";
 import {
   getOverrideProps,
   useDataStoreBinding,
 } from "@aws-amplify/ui-react/internal";
-import NoteUI from "./NoteUI";
+import MemoUI from "./MemoUI";
 import { Collection } from "@aws-amplify/ui-react";
-export default function NoteUICollection(props) {
+export default function MemoUICollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsPagination = {
     sort: (s) => s.createdAt(SortDirection.DESCENDING),
@@ -22,7 +22,7 @@ export default function NoteUICollection(props) {
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Note,
+    model: Memo,
     pagination: itemsPagination,
   }).items;
   React.useEffect(() => {
@@ -30,41 +30,24 @@ export default function NoteUICollection(props) {
       setItems(itemsProp);
       return;
     }
-    async function setItemsFromDataStore() {
-      var loaded = await Promise.all(
-        itemsDataStore.map(async (item) => ({
-          ...item,
-          Memos: await item.Memos.toArray(),
-        }))
-      );
-      setItems(loaded);
-    }
-    setItemsFromDataStore();
+    setItems(itemsDataStore);
   }, [itemsProp, itemsDataStore]);
   return (
     <Collection
-      type="grid"
-      isSearchable={true}
-      isPaginated={true}
+      type="list"
       searchPlaceholder="Search..."
-      itemsPerPage={9}
-      templateColumns="1fr 1fr 1fr"
-      autoFlow="row"
-      alignItems="stretch"
+      direction="column"
       justifyContent="center"
       items={items || []}
-      {...getOverrideProps(overrides, "NoteUICollection")}
+      {...getOverrideProps(overrides, "MemoUICollection")}
       {...rest}
     >
       {(item, index) => (
-        <NoteUI
-          note={item}
-          height="auto"
-          width="auto"
-          margin="10px 10px 10px 10px"
+        <MemoUI
+          memo={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></NoteUI>
+        ></MemoUI>
       )}
     </Collection>
   );
