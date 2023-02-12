@@ -10,6 +10,11 @@
       "StackName": "amplify-fulltuto-staging-94835",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:176265990387:stack/amplify-fulltuto-staging-94835/40dfe1a0-a9f1-11ed-b5a8-0a1c7a9b1895",
       "AmplifyAppId": "d2eenjgpthfzk2"
+    },
+    "categories": {
+      "auth": {
+        "fulltuto": {}
+      }
     }
   }
 }
